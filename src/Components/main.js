@@ -12,18 +12,12 @@ export default function Main() {
   const stopConfetti = () => {
     setTimeout(() => {
       setpieces(0);
-    }, 10000);
-  };
-
-  const stopModal = () => {
-    setTimeout(() => {
-      setsubmit(false);
-    }, 10000);
+      window.location.reload(true);
+    }, 15000);
   };
 
   useEffect(() => {
     stopConfetti();
-    stopModal();
   }, []);
 
   //Formik Logic
@@ -50,7 +44,6 @@ export default function Main() {
     onSubmit: (values) => {
       console.log(values);
       setsubmit(true);
-      setpieces(200);
     },
   });
 
